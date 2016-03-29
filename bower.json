@@ -1,0 +1,11 @@
+{
+  "name": "maketheplanetbetter.org",
+  "version": "1.0.0",
+  "description": "Make the Planet Better website.",
+  "dependencies": {
+    "jquery": "^2.2.2",
+    "normalize-css": "normalize.css#^4.0.0",
+    "font-awesome": "fontawesome#^4.5.0",
+    "jqGoogleForms": "kctess5/jqGoogleForms#^1.0.0"
+  }
+}

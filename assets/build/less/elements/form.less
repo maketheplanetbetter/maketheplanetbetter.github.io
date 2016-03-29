@@ -1,0 +1,65 @@
+form {
+  fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  input {
+    border: 1px solid darken(@brown, 5%);
+    display: block;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+      border-color: darken(@brown, 10%);
+    }
+
+    &[type="text"] {
+      margin-bottom: 5px;
+    }
+
+    &[type="radio"] {
+      display: none;
+    }
+  }
+
+  .form--choice {
+    background: lighten(@brown, 10%);
+    cursor: pointer;
+    display: block;
+    margin-bottom: 5px;
+
+    &:hover {
+      background: lighten(@brown, 5%);
+
+      .fa {
+        &:before {
+          content: '\f192';
+        }
+      }
+    }
+
+    &.form--choice-selected {
+      .fa {
+        &:before {
+          content: '\f058';
+        }
+      }
+    }
+
+    .fa {
+      background: lighten(@brown, 25%);
+      margin-right: @margin;
+      padding: @padding / 2;
+    }
+  }
+
+  .form--error {
+    .fa {
+      color: @red;
+    }
+  }
+}

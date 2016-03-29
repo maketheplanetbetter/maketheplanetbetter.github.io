@@ -1,0 +1,99 @@
+.content {
+  background: darken(@brown, 5%);
+
+  .content--inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: @browser;
+    padding: @padding;
+    width: 100%;
+    .clearfix;
+
+    @media (min-width: @browser) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .content--brand {
+      background: darken(@brown, 10%);
+      border-bottom: 2px solid darken(@brown, 15%);
+      border-top: 2px solid darken(@brown, 15%);
+      display: none;
+      float: left;
+      padding: @padding;
+      text-align: center;
+      width: 35%;
+
+      @media (min-width: @tablet) {
+        display: block;
+      }
+
+      h1 {
+        border-top: 2px solid @green;
+        border-bottom: 2px solid @green;
+        font-size: @font-size + 4;
+        padding-bottom: @padding - 10;
+        padding-top: @padding - 10;
+        text-transform: uppercase;
+      }
+
+      p {
+        font-weight: 100;
+        margin-bottom: 0;
+        text-align: center;
+      }
+
+      .fa {
+        color: @white;
+        font-size: @font-size * 10;
+      }
+    }
+
+    .content--body {
+      margin: 0 auto;
+      width: 100%;
+
+      @media (min-width: @tablet) {
+        float: right;
+        width: 60%;
+      }
+
+      .content--banner {
+        background-color: @grey;
+        background-size: cover;
+        border-top: 2px solid darken(@brown, 10%);
+        position: relative;
+        text-align: center;
+
+        h2 {
+          line-height: 225px;
+          margin: 0;
+        }
+
+        p {
+          font-size: @font-size + 4;
+          font-weight: 500;
+          margin: 0;
+          padding-bottom: @padding * 2;
+          padding-top: @padding * 2;
+
+          .fa {
+            margin-right: @margin / 2;
+          }
+        }
+      }
+
+      .content--questions {
+        padding: @padding;
+        background: darken(@brown, 10%);
+        border-top: 2px solid darken(@brown, 10%);
+        border-bottom: 2px solid darken(@brown, 10%);
+
+        p {
+          margin-top: 0;
+          font-size: @font-size + 5;
+        }
+      }
+    }
+  }
+}

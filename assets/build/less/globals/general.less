@@ -1,0 +1,60 @@
+*,
+*:before,
+&:after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: -moz-scrollbars-vertical;
+  overflow-y: scroll;
+}
+
+html,
+html a {
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.006);
+}
+
+body {
+  background: @grey;
+  color: @white;
+  font-family: @raleway;
+  font-size: @font-size;
+  font-weight: 400;
+  line-height: @line-height;
+}
+
+h1,
+h2,
+h3 {
+  line-height: @line-height - 0.3;
+}
+
+p {
+  line-height: @line-height;
+}
+
+a,
+a:link {
+  text-decoration: none;
+}
+
+blockquote {
+  background: lighten(@brown, 5%);
+  font-style: italic;
+  margin-bottom: @margin;
+  margin-left: 0;
+  margin-right: 0;
+  padding: @padding;
+
+  p {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

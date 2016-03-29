@@ -1,0 +1,39 @@
+.grid {
+  &.grid--stacked {
+    .grid--row {
+      .grid--column {
+        @media (min-width: @tablet) {
+          float: left;
+          width: 50%;
+
+          &:nth-child(even) {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .grid--row {
+    display: block;
+    width: 100%;
+    .clearfix;
+
+    &.grid--header {
+      .grid--column {
+        background: darken(@brown, 15%);
+      }
+    }
+
+    .grid--column {
+      background: darken(@brown, 5%);
+      margin-bottom: 2px;
+      padding: @padding / 3;
+      width: 100%;
+
+      &:nth-child(even) {
+        margin-bottom: @margin / 3;
+      }
+    }
+  }
+}

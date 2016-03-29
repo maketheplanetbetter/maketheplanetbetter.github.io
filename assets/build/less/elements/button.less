@@ -1,0 +1,61 @@
+.btn {
+  background: @green;
+  border: 0;
+  color: @white;
+  display: block;
+  font-weight: 800;
+  line-height: 1em;
+  margin-top: @margin;
+  outline: none;
+  padding: @padding / 1.5;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+
+  &:hover {
+    background: darken(@green, 5%);
+  }
+
+  &.btn--facebook,
+  &.btn--twitter {
+    margin: 0;
+  }
+
+  &.btn--facebook {
+    background: #3b5998;
+
+    &:hover {
+      background: darken(#3b5998, 5%);
+    }
+  }
+
+  &.btn--twitter {
+    background: #4099ff;
+
+    &:hover {
+      background: darken(#4099ff, 5%);
+    }
+  }
+}
+
+.btn--group {
+  padding-bottom: 5px;
+  .clearfix;
+
+  @media (min-width: @tablet) {
+    padding-bottom: @padding / 2;
+  }
+
+  .btn {
+    margin-bottom: 5px;
+    width: 100%;
+
+    @media (min-width: @browser) {
+      float: left;
+      margin-bottom: 0;
+      width: 50%;
+    }
+  }
+}
