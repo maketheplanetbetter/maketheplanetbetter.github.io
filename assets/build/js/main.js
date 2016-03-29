@@ -27,10 +27,10 @@ App.scroll_to = function scroll_to(selector) {
 App.share_stats = function () {
   var quiz = $('meta[name="quiz"]').attr('content');
   var total = $('meta[name="total"]').attr('content');
-  var number = window.localStorage[quiz];
+  var number = window.localStorage[quiz] || 0;
   var percent = (Number(number) / Number(total)) * 100;
   $('.score--number').text(number);
-  $('.score--percent').text(percent);
+  $('.score--percent').text(percent.toFixed(2));
   $('.score--total').text(total);
 };
 
@@ -104,15 +104,19 @@ App.submit_quiz = function () {
   var quiz = $('meta[name="quiz"]').attr('content');
   var redirect = form.find('input[name="redirect"]').val();
 
+  // Clear localStorage.
+  window.localStorage.removeItem(quiz);
+
+  // Handle form submission.
   form.on('submit', function (e) {
     var correct = 0;
     var is_valid = true;
-    var checked = form.find('input:checked');
-    e.preventDefault();
 
     // Validate each fieldset.
     $.each(fieldset, function () {
       var $fieldset = $(this);
+      var checked = $fieldset.find('input:checked');
+      e.preventDefault();
 
       if (!$fieldset.find('input').is(':checked')) {
         $fieldset.addClass('form--error');
@@ -127,6 +131,7 @@ App.submit_quiz = function () {
 
     if (!is_valid) {
       App.scroll_to('.form--error:first');
+      return false;
     }
 
     // Save correct answers in localStorage.
