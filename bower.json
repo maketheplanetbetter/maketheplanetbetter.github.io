@@ -1,6 +1,6 @@
 {
   "name": "maketheplanetbetter.org",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Make the Planet Better website.",
   "dependencies": {
     "jquery": "^2.2.2",
